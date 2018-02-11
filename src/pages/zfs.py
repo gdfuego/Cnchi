@@ -798,7 +798,7 @@ class InstallationZFS(GtkBaseBox):
             else:
                 fs_boot = "ext4"
 
-            self.devices['boot'] = (device_path, part)
+            self.devices['boot'] = self.get_partition_path(device_path, part)
             self.fs_devices[self.devices['boot']] = fs_boot
             self.mount_devices['/boot'] = self.devices['boot']
             # mkfs
