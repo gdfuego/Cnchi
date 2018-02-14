@@ -745,7 +745,7 @@ class InstallationZFS(GtkBaseBox):
                     # Create BOOT partition
                     wrapper.sgdisk_new(device_path, part_num,
                                        "ANTERGOS_BOOT", 512, "8300")
-                    self.devices['boot'] = get_partition_path(
+                    self.devices['boot'] = self.get_partition_path(
                         device_path, part_num)
                     self.fs_devices[self.devices['boot']] = "ext4"
                     self.mount_devices['/boot'] = self.devices['boot']
